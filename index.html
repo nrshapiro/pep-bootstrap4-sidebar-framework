@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>PEP 2021 Framework Mockup</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="leftnavbar">
+            <div class="leftnavbar-header">
+                <div class="row no-gutters">
+                    <div class="col-xs-6 col-sm-4">
+                        <img src="./images/PeP-Logo-256x300.jpg" class="img-fluid" alt="Responsive image" style="max-height: 60px;">
+                    </div>
+                    <div class="col text-center col-xs-6 col-sm-4">
+                        <h6>Psychoanalytic Electronic Publishing</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="leftnavbar-top">
+                <!-- NAVBAR TAB CONTEXT-SENSITIVE CONTENTS CONTROL -->
+                <div class="tab-content" id="nav-tabContent">
+                    <div> <!-- Hidden Tab Buttons, for now, first set not even needed.  First set shows top link menu as buttons, wanted just links, so used above a links -->
+                        <ul class="nav navbar-nav xs-col-2 d-none">
+                            <li class="nav-item active">
+                                <a class="list-group-item list-group-item-action" id="link-results-button2" data-toggle="list" href="#results-pane" role="tab" aria-controls="search-pane">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="list-group-item list-group-item-action" id="link-read-button2" data-toggle="list" href="#read-pane" role="tab" aria-controls="read-pane">Read</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="list-group-item list-group-item-action" id="link-browse-button2" data-toggle="list" href="#browse-pane" role="tab" aria-controls="browse-pane">Browse</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="list-group-item list-group-item-action active" id="link-home-button2" data-toggle="list" href="#home-pane" role="tab" aria-controls="home-pane">Home</a>
+                            </li>
+                        </ul>
+                        <!-- Hidden buttons to control second navigation tab -->
+                        <ul class="nav navbar-nav xs-col-1 d-none"> <!-- style="display:block"> -->
+                            <li class="nav-item active">
+                                <a class="list-group-item list-group-item-action show active" id="link-search2-button" data-toggle="list" href="#nav-search-pane" role="tab" aria-controls="search-pane">Search</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="list-group-item list-group-item-action" id="link-read2-button" data-toggle="list" href="#nav-read-pane" role="tab" aria-controls="messages">Read</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="list-group-item list-group-item-action" id="link-browse2-button" data-toggle="list" href="#nav-browse-pane" role="tab" aria-controls="settings">Browse</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="list-group-item list-group-item-action" id="link-home2-button" data-toggle="list" href="#nav-home-pane" role="tab" aria-controls="home">Home</a>
+                            </li>
+                        </ul>
+                    </div>
+                        <div class="tab-pane fade show active nav-card-style" id="nav-search-pane" role="tabpanel" aria-labelledby="list-profile-list">
+                        <div class="card-header" id="NavSearchAreaHead">
+                            <h5 class="mb-0">
+                            Search for Documents
+                            </h5>
+                           
+                        </div>
+                        <div class="card-body">
+                            <!-- Search Form starter/sample -->
+                            <form action="#" class="category-content">
+                                <div class="form-group">
+                                    <label>Smart Search:</label>
+                                    <input type="text" class="form-control" placeholder="What are you looking for?">
+                                </div>
+                                <label>Find terms or phrases (optional location):</label>
+                                <div class="input-group input-group-sm mb-3">
+                                    <input type="text" class="form-control" name="field_name" id="field_name1" list="field_names" placeholder="Everywhere" style="background-color:hsl(240,100%,75%,.1);font-weight:500;" />
+                                    <datalist id="field_names">
+                                        <option>Everywhere</option>
+                                        <option>Authors</option>
+                                        <option>Titles</option>
+                                        <option>Freud’s Work</option>
+                                        <option>PEP Glossary</option>
+                                        <option>Dialogs</option>
+                                        <option>Quotes</option>
+                                        <option>Years</option>
+                                        <option>Bibliographies</option>
+                                        <option>Cited this many times</option>
+                                        <option>Viewed this many times</option>
+                                        <option>Google Scholar</option>
+                                    </datalist>
+                                    <div class="input-group-append">
+                                        <input type="text" class="form-control inp-small" placeholder="terms or phrases">&nbsp;(+)</span>
+                                    </div>
+                                </div>
+                                <div class="input-group input-group-sm mb-3">
+                                    <input type="text" class="form-control" name="field_name" id="field_name2" list="field_names" placeholder="Everywhere" style="background-color:hsl(240,100%,75%,.1);font-weight:500;" />
+                                    <div class="input-group-append">
+                                        <input type="text" class="form-control inp-small" placeholder="terms or phrases">&nbsp;(+)</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label>Result Count:</label>
+                                    <textarea id="searchFormWarning" class="md-textarea form-control" rows="3"></textarea>
+                                </div>
+                                <div class="row" style="padding-top:20px;">
+                                    <div class="col-6">
+                                        <button type="reset" class="btn btn-danger btn-block">Clear</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button type="submit" class="btn btn-info btn-block">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- Search Form starter/sample  -->
+                            <ul class="list-unstyled components">
+                                <li class="active">
+                                    <a href="#refineArea" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Refine</a>
+                                    <ul class="collapse list-unstyled" id="refineArea">
+                                        <li>
+                                            <label>Your Search:</label>
+                                        </li>
+                                        <li>
+                                            <ul style="list-style: none;">
+                                                <li class="menu-text"><input type="checkbox" value="" />feminine (everywhere):9853</li>
+                                                <li class="menu-text"><input type="checkbox" value="" />disjunction (everywhere):841</li>
+                                                <li class="menu-text"><input type="checkbox" value="" />disjunction feminine (in para):132</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <label>Keywords:</label>
+                                        </li>
+                                        <li>
+                                            <ul style="list-style: none;">
+                                                <li class="menu-text"><input type="checkbox" value="" />Sexuality:3</li>
+                                                <li class="menu-text"><input type="checkbox" value="" />Gender:2</li>
+                                                <li class="menu-text"><input type="checkbox" value="" />Lacan:2</li>
+                                                <li class="menu-text"><input type="checkbox" value="" />Metapsychology:2</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul> 
+                        </div>
+                        <div class="card-footer">
+                            <label for="saved-searches">Saved Searches:</label>
+                            <input type="text" name="team" id="saved-searches" list="search-history" />
+                            <datalist id="search-history">
+                                <option>Save Current Search</option>
+                                <option>disjunction feminine [All:132 matches]</option>
+                                <option>family discord [Books:3 Matches]</option>
+                                <option>depression anxiety [Videos: 5 Matches</option>
+                            </datalist>
+                        </div>
+                    </div>
+                    <!-- *** Results Navbar List for Reading View *** -->
+                    <div class="tab-pane fade" id="nav-read-pane" role="tabpanel" aria-labelledby="list-read-list">
+                        <div class="card nav-card-style">
+                            <div class="card-header">
+                                <h5>Results List</h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="resultsPaging" class="row col-sm-12" style="display:block">
+                                    <ul id="idxjournals" class="articleList" data-bind="foreach: articleList">
+                                        <!-- Dummy Data List -->
+                                        <li class="articleListItem">
+                                            <span class="clickableReference" data-bind="attr: {id:documentID},
+                                                    html:documentRef,
+                                                    click: $root.gotoArticleAbstract;" id="PSAR.017.0055A">Jelliffe, S. E. (1930) International
+                                                Journal of Psycho-Analysis: (Vol. VII, Parts 3-4). Psychoanalytic Review 17:55-76</span>
+                                        </li>
+                            
+                                        <li class="articleListItem">
+                                            <span class="clickableReference" data-bind="attr: {id:documentID},
+                                                            html:documentRef,
+                                                            click: $root.gotoArticleAbstract;" id="AOP.025.0111A">Litowitz, B. E. (1997) Learning from Dr.
+                                                Frankenstein What Makes Us Human. Annual of Psychoanalysis 25:111-123</span>
+                                        </li>
+                                        <li class="articleListItem">
+                                            <span class="clickableReference" data-bind="attr: {id:documentID},
+                                                            html:documentRef,
+                                                            click: $root.gotoArticleAbstract;" id="JOAP.045.0521A">Colman, W. (2000) Tyrannical omnipotence
+                                                in the archetypal father. Journal of Analytical Psychology 45:521-539</span>
+                                        </li>
+                                        <li class="articleListItem">
+                                            <span class="clickableReference" data-bind="attr: {id:documentID},
+                                                        html:documentRef,
+                                                        click: $root.gotoArticleAbstract;" id="BJP.017.0416A">(2001) Abstracts from other Journals. British
+                                                Journal of Psychotherapy 17:416-418</span>
+                                        </li>
+                                        <li class="articleListItem">
+                                            <span class="clickableReference" data-bind="attr: {id:documentID},
+                                                        html:documentRef,
+                                                        click: $root.gotoArticleAbstract;" id="SGS.013.0112A">Weatherill, R. (2012) The Mother and the
+                                                Process of Truth. Studies in Gender and Sexuality 13:112-116</span>
+                                        </li>
+                                        <li class="articleListItem">
+                                            <span class="clickableReference" data-bind="attr: {id:documentID},
+                                                        html:documentRef,
+                                                        click: $root.gotoArticleAbstract;" id="CJP.023.0206A">Carveth, D. L. (2015) The Immoral Superego:
+                                                Conscience as the Fourth Element in the Structural Theory of the Mind. Canadian Journal of Psychoanalysis
+                                                23:206-223</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                (results paging controls)
+                            </div>
+                        </div>
+                    </div>
+                    <!-- *** Browse Navbar List for Browsing View *** -->
+                    <div class="tab-pane fade" id="nav-browse-pane" role="tabpanel" aria-labelledby="list-browse-list">
+                        <div class="card nav-card-style">
+                            <div class="card-header">
+                                <h5 class="mb-0">Browse Sources</h5>                                
+                                <ul class="nav nav-items" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#journalsBrowse" role="tab" aria-controls="home" aria-selected="true">Journals</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#booksBrowse" role="tab" aria-controls="profile" aria-selected="false">Books</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#videosBrowse" role="tab" aria-controls="contact" aria-selected="false">Videos</a>
+                                    </li>
+                                </ul>                            </div>
+                            <div class="card-body">
+
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="journalsBrowse" role="tabpanel" aria-labelledby="journal-tab">
+                                        <ul>
+                                            <li>JAPA - Journal of the American Psychoanalytic Society</li>
+                                            <li>IJP - International Journal of Psychoanalysis</li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane fade" id="booksBrowse" role="tabpanel" aria-labelledby="books-tab">
+                                        <ul>
+                                            <li>Book1</li>
+                                            <li>Book2</li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane fade" id="videosBrowse" role="tabpanel" aria-labelledby="videos-tab">
+                                        <ul>
+                                            <li>Video1</li>
+                                            <li>Video2</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            
+            <!-- *** More info Area of Navbar, a tabbed pane control with a tab for each view, tabs *** -->
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <ul class="nav nav-tabs d-none" id="myTab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" id="lower-home-tab" data-toggle="tab" href="#lower-home-card" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="lower-browse-tab" data-toggle="tab" href="#lower-browse-card" role="tab" aria-controls="profile" aria-selected="false">Browse</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="lower-search-tab" data-toggle="tab" href="#lower-search-card" role="tab" aria-controls="contact" aria-selected="false">Search</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="lower-read-tab" data-toggle="tab" href="#lower-read-card" role="tab" aria-controls="contact" aria-selected="false">Read</a>
+                          </li>
+                      </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="lower-home-card" role="tabpanel" aria-labelledby="lower-home-pane">
+                            <div class="card nav-card-style">
+                                <div class="card-header d-none">
+                                    More Info About PEP-Web
+                                </div>
+                                <div class="card-body">
+                                    <img src="./images/journal-collage-squished.jpg" class="img-fluid" alt="Responsive image" style="max-width:325px;">
+                                    &nbsp;
+                                    <img src="./images/bannerAPALogo.gif" class="img-fluid" alt="Responsive image" style="max-width:325px;">
+                                    &nbsp;
+                                    <img src="./images/bannerAPMLogo.gif" class="img-fluid" alt="Responsive image" style="max-width:325px;">
+                                    &nbsp;
+                                    <img src="./images/bannerIJPLogo.gif" class="img-fluid" alt="Responsive image" style="max-width:325px;">
+                                </div>
+                                <div class="card-footer d-none">
+            
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="lower-browse-card" role="tabpanel" aria-labelledby="lower-browse-pane">
+                            <div class="card nav-card-style">
+                                <div class="card-header d-none">
+                                    Tips for Browsing
+                                </div>
+                                <div class="card-body">
+                                    browse info
+                                </div>
+                                <div class="card-footer d-none">
+            
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="lower-read-card" role="tabpanel" aria-labelledby="lower-read-pane">
+                            <div class="card nav-card-style">
+                                <div class="card-header d-none">
+                                    Tips for Reading
+                                </div>
+                                <div class="card-body">
+                                    read info
+                                </div>
+                                <div class="card-footer d-none">
+            
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="lower-search-card" role="tabpanel" aria-labelledby="lower-search-pane">
+                            <div class="card nav-card-style">
+                                <div class="card-header d-none">
+                                    Tips for Searching
+                                </div>
+                                <div class="card-body">
+                                    search info
+                                </div>
+                                <div class="card-footer d-none">
+            
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <!-- Horizontal (top) Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light horznav">
+                <div class="container-fluid">
+                    <button type="button" id="leftnavbarCollapse" class="btn" style="background-color:#7386D5; color:whitesmoke">
+                        <i class="fas fa-bars hamburger-button"></i>
+                        <span></span>
+                    </button>
+
+                    <div class="xs-col-12 ml-auto">
+                        <a class="nav-item" id="link-results-button" data-toggle="list" href="#results-pane" role="tab" aria-controls="results-pane">Search</a>&nbsp;&nbsp;&nbsp;
+                        <a class="nav-item" id="link-read-button" data-toggle="list" href="#read-pane" role="tab" aria-controls="read-pane">Read</a>&nbsp;&nbsp;&nbsp;
+                        <a class="nav-item" id="link-browse-button" data-toggle="list" href="#browse-pane" role="tab" aria-controls="nav-browse-pane">Browse</a>&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-secondary">
+                            <a class="nav-item" id="link-home-button" data-toggle="list" href="#home-pane" role="tab" aria-controls="home-pane"><i class="fas fa-home"></i></a>
+                        </button>&nbsp;
+                        <button class="btn btn-secondary dropdown-toggle ml-auto" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Login</a>
+                                <a class="dropdown-item" href="#">Report a Problem</a>
+                                <a class="dropdown-item" href="#">Preferences</a>
+                                <a class="dropdown-item" href="#">Help</a>
+                            </div>
+                        </button>
+                    </div>
+
+                </div>
+            </nav>
+            
+
+            <!-- main content area -->
+            <div class="row">
+                <div class="col scroll col-sm-8">
+                    <div class="tab-content" id="nav-tabContent">
+                        <!-- HOME PANE -->
+                        <div class="tab-pane fade show active" id="home-pane" role="tabpanel" aria-labelledby="list-home-list">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5>PEP - Psychoanalytic Electronic Publishing</h5>
+                                    <h6>A Psychoanalytic Library at your fingertips</h6>
+                                </div>                            
+                                <div class="card-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>                
+                                </div>
+                                <div class="card-footer">
+                                    (Results Page Controls Here)
+                                </div>                            
+                            </div>
+                            <div class="card scroll">
+                                <div class="card-header">
+                                    <h5>Expert Pick of the Day </h5>
+                                </div>                            
+                                <div class="card-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                                <div class="card-footer">
+                                    (Results Page Controls Here)
+                                </div>                            
+                            </div>
+                        </div>
+
+                        <!-- SEARCH RESULTS PANE -->
+                        <div class="tab-pane fade" id="results-pane" role="tabpanel" aria-labelledby="list-profile-list">
+                                <div class="card">
+                                    <div class="card-header"><h5>Search Results</h5></div>                            
+                                    <div class="card-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>                
+                                    </div>
+                                    <div class="card-footer">
+                                        (Results Page Controls Here)
+        
+                                    </div>                            
+                                </div>
+                                <div class="card">
+                                    <div class="card-header"><h5>Preview</h5></div>                            
+                                    <div class="card-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>                
+                                    </div>
+                                    <div class="card-footer">
+                                        (Abstract footer widget area)
+                                    </div>                            
+                                </div>
+                            </div>
+
+                        <!-- READING PANE -->
+                        <div class="tab-pane fade" id="read-pane" role="tabpanel" aria-labelledby="list-messages-list">
+                            <div class="card">
+                                <div class="card-header"><h5>Read</h5></div>                            
+                                <div class="card-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>                
+                                </div>
+                                <div class="card-footer">
+                                    (Read Page Controls Here)
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="browse-pane" role="tabpanel" aria-labelledby="list-settings-list">
+                            <div class="card">
+                                <div class="card-header"><h5>Browse</h5></div>                            
+                                <div class="card-body">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                                <div class="card-footer">
+                                    (Browse Page Controls Here)
+                                </div>                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- *************************************************** -->
+                <div class="col col-sm-4" > <!-- Column 2 (right sidebar) -->
+                    <div class="d-flex flex-column bd-highlight mb-3">
+                        <div class="app-content content">
+                            <div class="sidebar-right">
+                                <div class="sidebar">
+                                    <div class="sidebar-content card d-none d-lg-block">
+                                        <div class="card-body">
+                                            <div class="category-title pb-1">
+                                                <h5>Related Info</h5>
+                                            </div>
+                                            <div>
+                                                <div id="accordion">
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingPastSearches">
+                                                            <h5 class="mb-0">
+                                                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapsePastSearches" aria-expanded="true" aria-controls="collapsePastSearches">
+                                                                Your Past Searches
+                                                            </button>
+                                                            </h5>
+                                                        </div>
+                                                
+                                                        <div id="collapsePastSearches" class="collapse show" aria-labelledby="headingPastSearches" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <ol>
+                                                                    <li>
+                                                                        Freud and Lacan
+                                                                    </li>
+                                                                    <li>
+                                                                        emotional distress
+                                                                    </li>
+                                                                    <li>
+                                                                        family discord
+                                                                    </li>
+                                                                    <li>
+                                                                        separation and anxiety
+                                                                    </li>
+                                                                    <li>
+                                                                        fear and loathing
+                                                                    </li>
+                                                                </ol>
+                                                            
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingYourInterests">
+                                                            <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseYourInterests" aria-expanded="false" aria-controls="collapseYourInterests">
+                                                                Your Interests
+                                                            </button>
+                                                            </h5>
+                                                        </div>
+                                                        <div id="collapseYourInterests" class="collapse" aria-labelledby="headingYourInterests" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <ol>
+                                                                    <li>
+                                                                        Freud and Lacan
+                                                                    </li>
+                                                                    <li>
+                                                                        emotional distress
+                                                                    </li>
+                                                                    <li>
+                                                                        family discord
+                                                                    </li>
+                                                                    <li>
+                                                                        separation and anxiety
+                                                                    </li>
+                                                                    <li>
+                                                                        fear and loathing
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingGlossaryTerms">
+                                                            <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseGlossaryTerms" aria-expanded="false" aria-controls="collapseGlossaryTerms">
+                                                                Glossary Terms
+                                                            </button>
+                                                            </h5>
+                                                        </div>
+                                                        <div id="collapseGlossaryTerms" class="collapse" aria-labelledby="headingGlossaryTerms" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <ol>
+                                                                    <li>
+                                                                        Freud and Lacan
+                                                                    </li>
+                                                                    <li>
+                                                                        emotional distress
+                                                                    </li>
+                                                                    <li>
+                                                                        family discord
+                                                                    </li>
+                                                                    <li>
+                                                                        separation and anxiety
+                                                                    </li>
+                                                                    <li>
+                                                                        fear and loathing
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingMoreLikeThese">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseMoreLikeThese" aria-expanded="false" aria-controls="collapseMoreLikeThese">
+                                                            More Like These
+                                                            </button>
+                                                        </h5>
+                                                        </div>
+                                                        <div id="collapseMoreLikeThese" class="collapse" aria-labelledby="headingMoreLikeThese" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <ol>
+                                                                    <li>
+                                                                        Freud and Lacan
+                                                                    </li>
+                                                                    <li>
+                                                                        emotional distress
+                                                                    </li>
+                                                                    <li>
+                                                                        family discord
+                                                                    </li>
+                                                                    <li>
+                                                                        separation and anxiety
+                                                                    </li>
+                                                                    <li>
+                                                                        fear and loathing
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingSeminalPapers">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeminalPapers" aria-expanded="false" aria-controls="collapseSeminalPapers">
+                                                            Seminal Papers
+                                                            </button>
+                                                        </h5>
+                                                        </div>
+                                                        <div id="collapseSeminalPapers" class="collapse" aria-labelledby="headingSeminalPapers" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <ol>
+                                                                    <li>
+                                                                        Freud and Lacan
+                                                                    </li>
+                                                                    <li>
+                                                                        emotional distress
+                                                                    </li>
+                                                                    <li>
+                                                                        family discord
+                                                                    </li>
+                                                                    <li>
+                                                                        separation and anxiety
+                                                                    </li>
+                                                                    <li>
+                                                                        fear and loathing
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingExpertPicks">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseExpertPicks" aria-expanded="false" aria-controls="collapseExpertPicks">
+                                                            Expert Picks
+                                                            </button>
+                                                        </h5>
+                                                        </div>
+                                                        <div id="collapseExpertPicks" class="collapse" aria-labelledby="headingExpertPicks" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <ol>
+                                                                    <li>
+                                                                        Freud and Lacan
+                                                                    </li>
+                                                                    <li>
+                                                                        emotional distress
+                                                                    </li>
+                                                                    <li>
+                                                                        family discord
+                                                                    </li>
+                                                                    <li>
+                                                                        separation and anxiety
+                                                                    </li>
+                                                                    <li>
+                                                                        fear and loathing
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingRelevantSearches">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseRelevantSearches" aria-expanded="false" aria-controls="collapseRelevantSearches">
+                                                            Relevant Searches
+                                                            </button>
+                                                        </h5>
+                                                        </div>
+                                                        <div id="collapseRelevantSearches" class="collapse" aria-labelledby="headingRelevantSearches" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <ol>
+                                                                    <li>
+                                                                        Freud and Lacan
+                                                                    </li>
+                                                                    <li>
+                                                                        emotional distress
+                                                                    </li>
+                                                                    <li>
+                                                                        family discord
+                                                                    </li>
+                                                                    <li>
+                                                                        separation and anxiety
+                                                                    </li>
+                                                                    <li>
+                                                                        fear and loathing
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingWhatsNew">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseWhatsNew" aria-expanded="false" aria-controls="collapseWhatsNew">
+                                                            What's New?
+                                                            </button>
+                                                        </h5>
+                                                        </div>
+                                                        <div id="collapseWhatsNew" class="collapse" aria-labelledby="headingWhatsNew" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <ol>
+                                                                    <li>
+                                                                        Freud and Lacan
+                                                                    </li>
+                                                                    <li>
+                                                                        emotional distress
+                                                                    </li>
+                                                                    <li>
+                                                                        family discord
+                                                                    </li>
+                                                                    <li>
+                                                                        separation and anxiety
+                                                                    </li>
+                                                                    <li>
+                                                                        fear and loathing
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingMostCited">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseMostCited" aria-expanded="false" aria-controls="collapseMostCited">
+                                                            Most Cited
+                                                            </button>
+                                                        </h5>
+                                                        </div>
+                                                        <div id="collapseMostCited" class="collapse" aria-labelledby="headingMostCited" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <ol>
+                                                                    <li>
+                                                                        Freud and Lacan
+                                                                    </li>
+                                                                    <li>
+                                                                        emotional distress
+                                                                    </li>
+                                                                    <li>
+                                                                        family discord
+                                                                    </li>
+                                                                    <li>
+                                                                        separation and anxiety
+                                                                    </li>
+                                                                    <li>
+                                                                        fear and loathing
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingMostViewed">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseMostViewed" aria-expanded="false" aria-controls="collapseMostViewed">
+                                                            Most Viewed
+                                                            </button>
+                                                        </h5>
+                                                        </div>
+                                                        <div id="collapseMostViewed" class="collapse" aria-labelledby="headingMostViewed" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <ol>
+                                                                    <li>
+                                                                        Freud and Lacan
+                                                                    </li>
+                                                                    <li>
+                                                                        emotional distress
+                                                                    </li>
+                                                                    <li>
+                                                                        family discord
+                                                                    </li>
+                                                                    <li>
+                                                                        separation and anxiety
+                                                                    </li>
+                                                                    <li>
+                                                                        fear and loathing
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingTopicalVideos">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTopicalVideos" aria-expanded="false" aria-controls="collapseTopicalVideos">
+                                                            Topical Videos
+                                                            </button>
+                                                        </h5>
+                                                        </div>
+                                                        <div id="collapseTopicalVideos" class="collapse" aria-labelledby="headingTopicalVideos" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <ol>
+                                                                    <li>
+                                                                        Freud and Lacan
+                                                                    </li>
+                                                                    <li>
+                                                                        emotional distress
+                                                                    </li>
+                                                                    <li>
+                                                                        family discord
+                                                                    </li>
+                                                                    <li>
+                                                                        separation and anxiety
+                                                                    </li>
+                                                                    <li>
+                                                                        fear and loathing
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card">
+                                                        <div class="card-header" id="headingTips">
+                                                        <h5 class="mb-0">
+                                                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTips" aria-expanded="false" aria-controls="collapseTips">
+                                                            Tips
+                                                            </button>
+                                                        </h5>
+                                                        </div>
+                                                        <div id="collapseRelevantSearches" class="collapse" aria-labelledby="headingTips" data-parent="#accordion">
+                                                            <div class="card-body">
+                                                                <ol>
+                                                                    <li>
+                                                                        Freud and Lacan
+                                                                    </li>
+                                                                    <li>
+                                                                        emotional distress
+                                                                    </li>
+                                                                    <li>
+                                                                        family discord
+                                                                    </li>
+                                                                    <li>
+                                                                        separation and anxiety
+                                                                    </li>
+                                                                    <li>
+                                                                        fear and loathing
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                    <!-- <div class="col-3 p-0" style="background-color:#f0f;">
+                        <div class="nav flex-column" style="background-color:#f00;">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link 1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link 2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link 3</a>
+                            </li>
+                        </div>
+                    </div> -->
+                    <div class="col-9">
+                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="sticky-footer" class="py-2 text-white-50">
+        <div class="container text-center">
+            <small>Copyright &copy; Psychoanalytic Electronic Publishing (PEP)</small>
+        </div>
+    </footer>
+    
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#leftnavbarCollapse').on('click', function () {
+                $('#leftnavbar').toggleClass('active');
+            });
+
+            // Synchronize two tab controls the quick/easy way, one in the navbar, one in content.
+            // Bootstrap doesn't currently support this, though it seems it's requested and 
+            // there may be a fix coming
+
+            $('#link-results-button').on('click', function () {
+                $('#link-search2-button').click();
+                $('#link-results-button2').click();
+                $('#lower-search-tab').click();
+                console.log("click results");
+
+            });
+
+            $('#link-read-button').on('click', function () {
+                $('#link-read2-button').click();
+                $('#link-read-button2').click();
+                $('#lower-read-tab').click();
+                console.log("click read");
+            });
+
+            $('#link-home-button').on('click', function () {
+            //home goes to the same place as search
+                $('#link-search2-button').click();
+                $('#link-home-button2').click();
+                $('#lower-home-tab').click();
+                console.log("click home");
+            });
+
+            $('#link-browse-button').on('click', function () {
+                $('#link-browse2-button').click();
+                $('#link-browse-button2').click();
+                $('#lower-browse-tab').click();
+                console.log("click browse");
+            });
+
+            
+        });
+    </script>
+</body>
+
+</html>
